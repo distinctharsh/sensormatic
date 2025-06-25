@@ -22,7 +22,7 @@
                             <i class="fas fa-phone fa-3x text-primary"></i>
                         </div>
                         <h5>Phone</h5>
-                        <p class="mb-2">+1 800-642-7505</p>
+                        <p class="mb-2">+91-9999881758</p>
                         <small class="text-muted">Sales and general inquiries</small>
                     </div>
                 </div>

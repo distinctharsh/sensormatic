@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sensormatic - @yield('title', 'Home')</title>
+    <title>Aradhya Infotech - @yield('title', 'Home')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo.png">
     <style>
         :root {
             --primary-color: #003366;
@@ -297,14 +298,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <a href="#">How to Buy</a>
-                    <a href="#">Support and Service</a>
-                    <a href="#">Media Center</a>
-                    <a href="#">Become a Partner</a>
+                    <a href="{{ route('contact') }}">How to Buy</a>
+                    <a href="{{ route('contact') }}">Support and Service</a>
+                    <a href="{{ route('contact') }}">Media Center</a>
+                    <a href="{{ route('contact') }}">Become a Partner</a>
                 </div>
                 <div class="col-md-6 text-end">
-                    <span class="me-3">US | EN</span>
-                    <button class="region-selector">See Full List</button>
+                    <span class="me-3">IN | EN</span>
                 </div>
             </div>
         </div>
@@ -314,13 +314,11 @@
     <nav class="navbar navbar-expand-lg main-navbar">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="/images/logo.png" alt="Logo" style="height: 40px; width: auto;" class="align-middle">
+                <img src="/images/logo.png" alt="Aradhya Infotech Logo" style="height: 40px; width: auto;" class="align-middle">
             </a>
-            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
@@ -353,10 +351,6 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><h6 class="dropdown-header">Media</h6></li>
-                            <li><a class="dropdown-item" href="#">In the News</a></li>
-                            <li><a class="dropdown-item" href="#">Press Releases</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><h6 class="dropdown-header">Resources</h6></li>
                             <li><a class="dropdown-item" href="{{ route('resources') }}">All Resources</a></li>
                             <li><a class="dropdown-item" href="{{ route('resources', ['type' => 'Case Study']) }}">Case Studies</a></li>
                             <li><a class="dropdown-item" href="{{ route('resources', ['type' => 'Article']) }}">Articles</a></li>
@@ -364,9 +358,6 @@
                             <li><a class="dropdown-item" href="{{ route('resources', ['type' => 'Video']) }}">Videos</a></li>
                             <li><a class="dropdown-item" href="{{ route('resources', ['type' => 'White Paper']) }}">White Papers</a></li>
                             <li><a class="dropdown-item" href="{{ route('resources', ['type' => 'Webinar']) }}">Webinars</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Catalog Download</a></li>
-                            <li><a class="dropdown-item" href="#">Estimators</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -385,10 +376,6 @@
                         <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                     </li>
                 </ul>
-                <div class="ms-3">
-                    <a href="#" class="btn btn-outline-primary btn-sm me-2">Search</a>
-                    <a href="{{ route('contact') }}" class="btn btn-primary btn-sm">Contact Us</a>
-                </div>
             </div>
         </div>
     </nav>
@@ -397,63 +384,48 @@
     @yield('content')
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer mt-5 pt-5 pb-3 bg-dark text-white">
         <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <h5>Connect</h5>
-                    <p>+1 800-642-7505 (US)</p>
-                    <p>Sales and general inquiries</p>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-light btn-sm">Contact Us</a>
+            <div class="row align-items-center mb-4">
+                <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
+                    <img src="/images/logo.png" alt="Aradhya Infotech Logo" style="height:48px;">
+                    <h5 class="mt-2 mb-0 fw-bold">Aradhya Infotech</h5>
                 </div>
-                <div class="col-md-2">
-                    <h6>Buy Sensormatic</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Download Our Catalog</a></li>
+                <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
+                    <h6 class="fw-bold">Contact</h6>
+                    <p class="mb-1"><i class="fas fa-phone-alt me-2"></i>+91-9999881758</p>
+                    <p class="mb-1"><i class="fas fa-envelope me-2"></i>info@aradhyainfotech.com</p>
+                    <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>198 A BASEMENT, SANT NAGAR EAST OF KAILASH, NEW DELHI, DL 110065</p>
+                </div>
+                <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
+                    <h6 class="fw-bold">Quick Links</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="/" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="{{ route('about') }}" class="text-white-50 text-decoration-none">About</a></li>
+                        <li><a href="{{ route('services') }}" class="text-white-50 text-decoration-none">Services</a></li>
+                        <li><a href="{{ route('solutions') }}" class="text-white-50 text-decoration-none">Solutions</a></li>
+                        <li><a href="{{ route('resources') }}" class="text-white-50 text-decoration-none">Resources</a></li>
+                        <li><a href="{{ route('contact') }}" class="text-white-50 text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-md-2">
-                    <h6>Press</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Media Center</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2">
-                    <h6>Join Us</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Subscribe to Retail Insights</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2">
-                    <h6>Get help</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Support and Service</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-1">
-                    <h6>Customer Login</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#">ShopperTrak Analytics Login</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="mt-4 mb-3">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 Johnson Controls. All Rights Reserved.</p>
-                </div>
-                <div class="col-md-3">
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                <div class="col-md-3 text-center text-md-start">
+                    <h6 class="fw-bold">Follow Us</h6>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-2">
+                        <a href="https://wa.me/919999881758" class="btn btn-outline-light btn-sm rounded-circle" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/company/aradhyainfotech/" class="btn btn-outline-light btn-sm rounded-circle" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://facebook.com/aradhyainfotech" class="btn btn-outline-light btn-sm rounded-circle" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/aradhyainfotech" class="btn btn-outline-light btn-sm rounded-circle" target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
-                <div class="col-md-3 text-end">
-                    <a href="#" class="me-3">Legal</a>
-                    <a href="#" class="me-3">Privacy Settings</a>
-                    <a href="#">Technical Terms</a>
+            </div>
+            <hr class="border-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <small>&copy; 2025 Aradhya Infotech. All Rights Reserved.</small>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="{{ route('about') }}#privacy" class="text-white-50 text-decoration-none me-3">Privacy Policy</a>
+                    <a href="{{ route('about') }}#terms" class="text-white-50 text-decoration-none">Terms of Service</a>
                 </div>
             </div>
         </div>
