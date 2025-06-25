@@ -31,31 +31,31 @@
     </section>
 
     <!-- Company Stats -->
-    <section class="bg-light py-5">
+    <section class="py-5 bg-light">
         <div class="container">
-            <div class="row text-center">
-                <div class="col-md-3 mb-4">
+            <div class="row text-center justify-content-center align-items-center">
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
                     <div class="stat-item">
-                        <h3 class="text-primary">50+</h3>
-                        <p>Years of Innovation</p>
+                        <div class="display-4 fw-bold text-primary mb-2">50+</div>
+                        <div class="fs-5">Years of Innovation</div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
                     <div class="stat-item">
-                        <h3 class="text-primary">1M+</h3>
-                        <p>Retail Locations</p>
+                        <div class="display-4 fw-bold text-primary mb-2">1M+</div>
+                        <div class="fs-5">Retail Locations</div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
                     <div class="stat-item">
-                        <h3 class="text-primary">150+</h3>
-                        <p>Countries Served</p>
+                        <div class="display-4 fw-bold text-primary mb-2">150+</div>
+                        <div class="fs-5">Countries Served</div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-6 col-md-3">
                     <div class="stat-item">
-                        <h3 class="text-primary">24/7</h3>
-                        <p>Global Support</p>
+                        <div class="display-4 fw-bold text-primary mb-2">24/7</div>
+                        <div class="fs-5">Global Support</div>
                     </div>
                 </div>
             </div>
@@ -161,4 +161,6 @@
             </div>
         </div>
     </section>
+
+    <img src="/images/logo.png" alt="Logo" style="height: 40px; width: auto;" class="align-middle" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=\'fw-bold\' style=\'color:#003366;font-size:24px\'>Logo</span>')">
 @endsection 

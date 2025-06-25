@@ -314,7 +314,7 @@
     <nav class="navbar navbar-expand-lg main-navbar">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <strong>Sensormatic</strong>
+                <img src="/images/logo.png" alt="Logo" style="height: 40px; width: auto;" class="align-middle">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
