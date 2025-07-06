@@ -290,6 +290,48 @@
                 font-size: 1.4rem;
             }
         }
+
+        /* Multi-level dropdown styles */
+        .multi-level-dropdown .dropdown-menu {
+            left: 100%;
+            top: 0;
+            margin-top: -1px;
+            display: none;
+            position: absolute;
+            min-width: 220px;
+            z-index: 9999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .multi-level-dropdown .dropdown-submenu:hover > .dropdown-menu {
+            display: block;
+            right: auto;
+            left: 100%;
+        }
+        .multi-level-dropdown .dropdown-submenu {
+            position: relative;
+        }
+        /* If submenu would go off the right edge, show to the left */
+        .multi-level-dropdown .dropdown-menu {
+            right: auto;
+        }
+        @media (max-width: 991.98px) {
+            .multi-level-dropdown .dropdown-menu {
+                position: static !important;
+                left: 0 !important;
+                top: 100% !important;
+                box-shadow: none;
+                min-width: 100%;
+            }
+        }
+
+        /* Remove margin-left from dropdown-menu for correct submenu alignment */
+        /* .navbar-expand-lg .navbar-nav .dropdown-menu {
+            margin-left: 53%;
+        } */
+
+        .navbar-nav .dropdown-menu {
+            min-width: 220px;
+        }
     </style>
 </head>
 <body>
@@ -300,8 +342,7 @@
                 <div class="col-md-6">
                     <a href="{{ route('contact') }}">How to Buy</a>
                     <a href="{{ route('contact') }}">Support and Service</a>
-                    <a href="{{ route('contact') }}">Media Center</a>
-                    <a href="{{ route('contact') }}">Become a Partner</a>
+                   
                 </div>
                 <div class="col-md-6 text-end">
                     <span class="me-3">IN | EN</span>
@@ -325,52 +366,40 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             Solutions
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><h6 class="dropdown-header">Loss Prevention & Liability</h6></li>
-                            <li><a class="dropdown-item" href="{{ route('solutions') }}#overview">Overview</a></li>
-                            <li><a class="dropdown-item" href="{{ route('solutions') }}#electronic-surveillance">Electronic Article Surveillance</a></li>
-                            <li><a class="dropdown-item" href="{{ route('solutions') }}#store-compliance">Store Compliance</a></li>
-                            <li><a class="dropdown-item" href="{{ route('solutions') }}#merchandise-protection">Merchandise Protection</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><h6 class="dropdown-header">Inventory Intelligence</h6></li>
-                            <li><a class="dropdown-item" href="{{ route('solutions') }}#inventory-visibility">Inventory Visibility</a></li>
-                            <li><a class="dropdown-item" href="{{ route('solutions') }}#storefront-visibility">Storefront Visibility</a></li>
-                            <li><a class="dropdown-item" href="{{ route('solutions') }}#supply-chain">Supply Chain Intelligence</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><h6 class="dropdown-header">Traffic Insights</h6></li>
-                            <li><a class="dropdown-item" href="{{ route('solutions') }}#shopper-journey">Shopper Journey</a></li>
-                            <li><a class="dropdown-item" href="{{ route('solutions') }}#analytics">ShopperTrak Analytics</a></li>
+                        <ul class="dropdown-menu multi-level-dropdown">
+                            @foreach($navbarSolutions as $category => $subcats)
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#">{{ $category }}</a>
+                                    <ul class="dropdown-menu">
+                                        @foreach($subcats as $subcategory => $solutions)
+                                            @if($subcategory && $subcategory !== '')
+                                                <li class="dropdown-submenu">
+                                                    <a class="dropdown-item dropdown-toggle" href="#">{{ $subcategory }}</a>
+                                                    <ul class="dropdown-menu">
+                                                        @foreach($solutions as $solution)
+                                                            <li><a class="dropdown-item" href="{{ route('solution.show', $solution->slug) }}">{{ $solution->title }}</a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+                                            @else
+                                                @foreach($solutions as $solution)
+                                                    <li><a class="dropdown-item" href="{{ route('solution.show', $solution->slug) }}">{{ $solution->title }}</a></li>
+                                                @endforeach
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('services') }}">Services</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Resources
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><h6 class="dropdown-header">Media</h6></li>
-                            <li><a class="dropdown-item" href="{{ route('resources') }}">All Resources</a></li>
-                            <li><a class="dropdown-item" href="{{ route('resources', ['type' => 'Case Study']) }}">Case Studies</a></li>
-                            <li><a class="dropdown-item" href="{{ route('resources', ['type' => 'Article']) }}">Articles</a></li>
-                            <li><a class="dropdown-item" href="{{ route('resources', ['type' => 'eBook']) }}">eBooks</a></li>
-                            <li><a class="dropdown-item" href="{{ route('resources', ['type' => 'Video']) }}">Videos</a></li>
-                            <li><a class="dropdown-item" href="{{ route('resources', ['type' => 'White Paper']) }}">White Papers</a></li>
-                            <li><a class="dropdown-item" href="{{ route('resources', ['type' => 'Webinar']) }}">Webinars</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('blog') }}">Blog</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            About Us
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('about') }}">Overview</a></li>
-                            <li><a class="dropdown-item" href="{{ route('about') }}#leadership">Leadership Team</a></li>
-                            <li><a class="dropdown-item" href="{{ route('about') }}#partnerships">Partnerships & Alliances</a></li>
-                            <li><a class="dropdown-item" href="{{ route('about') }}#customers">Our Customers</a></li>
-                            <li><a class="dropdown-item" href="{{ route('about') }}#sustainability">Sustainability</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('about') }}">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contact') }}">Contact</a>
@@ -404,7 +433,7 @@
                         <li><a href="{{ route('about') }}" class="text-white-50 text-decoration-none">About</a></li>
                         <li><a href="{{ route('services') }}" class="text-white-50 text-decoration-none">Services</a></li>
                         <li><a href="{{ route('solutions') }}" class="text-white-50 text-decoration-none">Solutions</a></li>
-                        <li><a href="{{ route('resources') }}" class="text-white-50 text-decoration-none">Resources</a></li>
+                        <li><a href="{{ route('blog') }}" class="text-white-50 text-decoration-none">Blogs</a></li>
                         <li><a href="{{ route('contact') }}" class="text-white-50 text-decoration-none">Contact</a></li>
                     </ul>
                 </div>

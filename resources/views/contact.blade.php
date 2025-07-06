@@ -54,6 +54,7 @@
     <section class="bg-light py-5">
         <div class="container">
             <div class="row">
+               
                 <div class="col-md-6">
                     <h3>Send us a Message</h3>
                     <p class="lead mb-4">Fill out the form below and we'll get back to you within 24 hours.</p>
@@ -99,37 +100,20 @@
                     </form>
                 </div>
                 <div class="col-md-6">
-                    <h3>Office Locations</h3>
-                    <p class="lead mb-4">Find our offices around the world.</p>
-                    
-                    <div class="office-locations">
-                        <div class="office-card mb-4">
-                            <h5><i class="fas fa-map-marker-alt text-primary me-2"></i>North America</h5>
-                            <p class="mb-1"><strong>Headquarters</strong></p>
-                            <p class="mb-1">1501 Yamato Road</p>
-                            <p class="mb-1">Boca Raton, FL 33431</p>
-                            <p class="mb-1">United States</p>
+                    <section class="py-0">
+                        <div class="container-fluid px-0">
+                            <div style="width: 100%; height: 400px;">
+                                <iframe src="https://www.google.com/maps?q=198+A+BASEMENT,+SANT+NAGAR+EAST+OF+KAILASH,+NEW+DELHI,+DL+110065&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
                         </div>
-                        
-                        <div class="office-card mb-4">
-                            <h5><i class="fas fa-map-marker-alt text-primary me-2"></i>Europe</h5>
-                            <p class="mb-1"><strong>European Office</strong></p>
-                            <p class="mb-1">Johnson Controls House</p>
-                            <p class="mb-1">Lakeside, Cheadle Royal Business Park</p>
-                            <p class="mb-1">Cheadle, SK8 3GR, United Kingdom</p>
-                        </div>
-                        
-                        <div class="office-card mb-4">
-                            <h5><i class="fas fa-map-marker-alt text-primary me-2"></i>Asia Pacific</h5>
-                            <p class="mb-1"><strong>APAC Office</strong></p>
-                            <p class="mb-1">Johnson Controls Asia Pacific</p>
-                            <p class="mb-1">Singapore</p>
-                        </div>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Google Map Section -->
+   
 
     <!-- Additional Contact Options -->
     <section class="py-5">

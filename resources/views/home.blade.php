@@ -151,15 +151,5 @@
 </section>
 
 <!-- Contact Section -->
-<section class="py-5 bg-primary text-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h2>Connect</h2>
-                <p class="lead">+91-9999881758 (US) Sales and general inquiries</p>
-                <a href="{{ route('contact') }}" class="btn btn-light btn-lg">Contact Us</a>
-            </div>
-        </div>
-    </div>
-</section>
+
 @endsection

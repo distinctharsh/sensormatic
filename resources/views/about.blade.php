@@ -156,11 +156,10 @@
                     <h2>Join Our Mission</h2>
                     <p class="lead">Partner with us to transform your retail operations</p>
                     <a href="#" class="btn btn-primary btn-lg">Contact Us</a>
-                    <a href="#" class="btn btn-outline-primary btn-lg ms-2">Careers</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <img src="/images/logo.png" alt="Logo" style="height: 40px; width: auto;" class="align-middle" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=\'fw-bold\' style=\'color:#003366;font-size:24px\'>Logo</span>')">
+    {{-- <img src="/images/logo.png" alt="Logo" style="height: 40px; width: auto;" class="align-middle" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=\'fw-bold\' style=\'color:#003366;font-size:24px\'>Logo</span>')"> --}}
 @endsection 
