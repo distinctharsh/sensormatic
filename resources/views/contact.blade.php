@@ -31,7 +31,10 @@
                             <i class="fas fa-phone fa-3x text-primary"></i>
                         </div>
                         <h5>Phone</h5>
-                        <p class="mb-2">+91-9999881758</p>
+                        <p class="mb-2">{{ $contact && $contact->phone ? $contact->phone : '+91-9999881758' }}</p>
+                        @if($contact && $contact->whatsapp)
+                            <p><a href="https://wa.me/{{ $contact->whatsapp }}" target="_blank">WhatsApp</a></p>
+                        @endif
                         <small class="text-muted">Sales and general inquiries</small>
                     </div>
                 </div>
@@ -41,18 +44,18 @@
                             <i class="fas fa-envelope fa-3x text-primary"></i>
                         </div>
                         <h5>Email</h5>
-                        <p class="mb-2">info@aradhyainfotech.com</p>
+                        <p class="mb-2">{{ $contact && $contact->email ? $contact->email : 'info@aradhyainfotech.com' }}</p>
                         <small class="text-muted">General inquiries</small>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="contact-card text-center">
                         <div class="contact-icon mb-3">
-                            <i class="fas fa-headset fa-3x text-primary"></i>
+                            <i class="fas fa-map-marker-alt fa-3x text-primary"></i>
                         </div>
-                        <h5>Support</h5>
-                        <p class="mb-2">24/7 Technical Support</p>
-                        <small class="text-muted">Available worldwide</small>
+                        <h5>Address</h5>
+                        <p class="mb-2">{{ $contact && $contact->address ? $contact->address : '198 A BASEMENT, SANT NAGAR EAST OF KAILASH, NEW DELHI, DL 110065' }}</p>
+                        <small class="text-muted">Office Location</small>
                     </div>
                 </div>
             </div>
@@ -112,7 +115,11 @@
                     <section class="py-0">
                         <div class="container-fluid px-0">
                             <div style="width: 100%; height: 400px;">
-                                <iframe src="https://www.google.com/maps?q=198+A+BASEMENT,+SANT+NAGAR+EAST+OF+KAILASH,+NEW+DELHI,+DL+110065&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                @if($contact && $contact->map_embed)
+                                    {!! $contact->map_embed !!}
+                                @else
+                                    <iframe src="https://www.google.com/maps?q=198+A+BASEMENT,+SANT+NAGAR+EAST+OF+KAILASH,+NEW+DELHI,+DL+110065&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                @endif
                             </div>
                         </div>
                     </section>

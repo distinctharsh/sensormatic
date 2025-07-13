@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Models\ContactInfo;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,8 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/contact', function () {
-    return view('contact');
+    $contact = \App\Models\ContactInfo::first();
+    return view('contact', compact('contact'));
 })->name('contact');
 
 Route::get('/blog', function () {
@@ -47,4 +49,9 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::resource('services', App\Http\Controllers\Admin\ServiceController::class);
+    Route::resource('solutions', App\Http\Controllers\Admin\SolutionController::class, [
+        'as' => 'solutions.admin'
+    ]);
+    Route::get('contact-info/edit', [App\Http\Controllers\Admin\ContactInfoController::class, 'edit'])->name('admin.contact-info.edit');
+    Route::put('contact-info/update', [App\Http\Controllers\Admin\ContactInfoController::class, 'update'])->name('admin.contact-info.update');
 });

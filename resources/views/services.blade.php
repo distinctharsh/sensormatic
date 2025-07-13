@@ -187,60 +187,6 @@
         </div>
     </section> --}}
 
-    <!-- Support Options -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2>Support Options</h2>
-                    <p class="lead">Choose the support level that best fits your business needs</p>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="contact-option text-center">
-                        <i class="fas fa-phone fa-3x contact-icon mb-3"></i>
-                        <h4>Basic Support</h4>
-                        <p>Standard support during business hours with email and phone assistance.</p>
-                        <ul class="list-unstyled">
-                            <li>Business Hours Support</li>
-                            <li>Email & Phone Support</li>
-                            <li>Online Knowledge Base</li>
-                        </ul>
-                        <a href="#" class="btn btn-outline-primary">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="contact-option text-center">
-                        <i class="fas fa-headset fa-3x contact-icon mb-3"></i>
-                        <h4>Premium Support</h4>
-                        <p>Enhanced support with extended hours and priority response times.</p>
-                        <ul class="list-unstyled">
-                            <li>Extended Hours Support</li>
-                            <li>Priority Response</li>
-                            <li>Dedicated Support Team</li>
-                        </ul>
-                        <a href="#" class="btn btn-outline-primary">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="contact-option text-center">
-                        <i class="fas fa-shield-alt fa-3x contact-icon mb-3"></i>
-                        <h4>Enterprise Support</h4>
-                        <p>Comprehensive support with 24/7 availability and dedicated account management.</p>
-                        <ul class="list-unstyled">
-                            <li>24/7 Support</li>
-                            <li>Dedicated Account Manager</li>
-                            <li>Custom SLA</li>
-                        </ul>
-                        <a href="#" class="btn btn-outline-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Call to Action -->
     <section class="py-5 bg-primary text-white">
         <div class="container">
