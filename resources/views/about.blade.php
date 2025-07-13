@@ -6,9 +6,9 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <h1>About Sensormatic</h1>
-            <h2>Leading the Future of Retail Technology</h2>
-            <p class="lead">For over 50 years, Sensormatic has been at the forefront of retail innovation, helping retailers protect their merchandise, optimize operations, and enhance customer experiences.</p>
+            <h1>About EAS Security Systems</h1>
+            <h2>Pioneering Smarter Perimeter Protection</h2>
+            <p class="lead">For over a decade, EAS Security Systems has been revolutionizing physical security through cutting-edge access control solutions. We specialize in AI-powered gates, biometric turnstiles, and intelligent surveillance systems that protect critical infrastructure while ensuring seamless authorized access.</p>
         </div>
     </section>
 
@@ -18,20 +18,24 @@
             <div class="row">
                 <div class="col-md-6">
                     <h2>Our Mission</h2>
-                    <p class="lead">To help retailers increase revenue, optimize labor, and reduce shrink through innovative technology solutions.</p>
-                    <p>We provide comprehensive retail solutions that combine loss prevention, inventory intelligence, and traffic insights to deliver measurable business outcomes for our customers.</p>
+                    <p class="lead">To empower organizations with unbreachable perimeter security, optimized access control, and intelligent surveillance through cutting-edge EAS gate solutions.</p>
+                    <p>We deliver comprehensive security ecosystems that integrate AI-powered gates, biometric verification, and real-time monitoring to create measurable safety outcomes for high-risk facilities.</p>
                 </div>
                 <div class="col-md-6">
                     <h2>Our Vision</h2>
-                    <p class="lead">To be the global leader in retail technology solutions that drive business transformation.</p>
-                    <p>We envision a future where retailers have complete visibility into their operations, enabling data-driven decisions that maximize profitability and customer satisfaction.</p>
+                    <p class="lead">To redefine global security standards through next-generation access control technologies.</p>
+                    <p>We envision a future where every critical facility operates with:</p>
+                    ✔ Zero unauthorized entry <br>
+                    ✔ Frictionless authorized access <br>
+                    ✔ AI-driven threat prediction <br>
+                    ✔ Seamless security-operations integration <br>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Company Stats -->
-    <section class="py-5 bg-light">
+    {{-- <section class="py-5 bg-light">
         <div class="container">
             <div class="row text-center justify-content-center align-items-center">
                 <div class="col-6 col-md-3 mb-4 mb-md-0">
@@ -60,10 +64,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Leadership Team -->
-    <section class="py-5">
+    {{-- <section class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
@@ -104,57 +108,18 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Sustainability -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Sustainability</h2>
-                    <p class="lead">Committed to environmental responsibility and sustainable business practices.</p>
-                    <p>We are dedicated to reducing our environmental footprint through sustainable product design, energy-efficient solutions, and responsible business practices that benefit our customers and the planet.</p>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-check text-success me-2"></i>Sustainable product design</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Energy-efficient solutions</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Responsible manufacturing</li>
-                        <li><i class="fas fa-check text-success me-2"></i>Green packaging initiatives</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <h2>Partnerships & Alliances</h2>
-                    <p class="lead">Strategic partnerships that enhance our solution capabilities.</p>
-                    <p>We collaborate with leading technology providers and industry experts to deliver comprehensive solutions that address the evolving needs of modern retail.</p>
-                    <div class="row">
-                        <div class="col-6">
-                            <h6>Technology Partners</h6>
-                            <ul class="list-unstyled">
-                                <li>• Microsoft</li>
-                                <li>• Intel</li>
-                                <li>• Lenovo</li>
-                            </ul>
-                        </div>
-                        <div class="col-6">
-                            <h6>Industry Alliances</h6>
-                            <ul class="list-unstyled">
-                                <li>• NRF</li>
-                                <li>• RILA</li>
-                                <li>• ECR</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Call to Action -->
     <section class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2>Join Our Mission</h2>
-                    <p class="lead">Partner with us to transform your retail operations</p>
+                    <h2>Join Our Security Revolution</h2>
+                    <p class="lead">Upgrade to Unbreakable Perimeter Protection</p>
                     <a href="#" class="btn btn-primary btn-lg">Contact Us</a>
                 </div>
             </div>

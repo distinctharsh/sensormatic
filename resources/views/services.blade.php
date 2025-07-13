@@ -8,12 +8,12 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h1>Professional Services</h1>
-                    <h2>Expert Support for Your Retail Success</h2>
-                    <p class="lead">From implementation to ongoing support, our team of experts ensures your Sensormatic solutions deliver maximum value and ROI.</p>
+                    <h1>Security Integration Services</h1>
+                    <h2>Expert Support for Uncompromising Protection</h2>
+                    <p class="lead">From custom installation to 24/7 system monitoring, our certified security specialists ensure your EAS gates and access control solutions deliver maximum safety and operational efficiency.</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="/images/c.jpg" alt="Professional Services" class="img-fluid rounded">
+                    <img src="/images/s1.jpg" alt="Professional Services" class="img-fluid rounded">
                 </div>
             </div>
         </div>
@@ -28,50 +28,19 @@
                     <p class="lead">We provide end-to-end support to ensure your retail technology investments deliver optimal performance and value.</p>
                 </div>
             </div>
-            
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="service-card text-center">
-                        <img src="/images/c.jpg" alt="Implementation Services" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover; width: 100%;">
-                        <h4>Implementation Services</h4>
-                        <p>Expert installation and configuration of your Sensormatic solutions with minimal disruption to your operations.</p>
-                        <ul class="list-unstyled text-start">
-                            <li><i class="fas fa-check text-success me-2"></i>Site Assessment & Planning</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Professional Installation</li>
-                            <li><i class="fas fa-check text-success me-2"></i>System Configuration</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Testing & Validation</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                @foreach($services as $service)
+                    <div class="col-md-4 mb-4">
+                        <div class="service-card text-center">
+                            @if($service->image)
+                                <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->title }}" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover; width: 100%;">
+                            @endif
+                            <h4>{{ $service->title }}</h4>
+                            <p>{{ $service->description }}</p>
+                            <a href="{{ route('service.show', $service->slug) }}" class="btn btn-primary">Learn More</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="service-card text-center">
-                        <img src="/images/c.jpg" alt="Training & Education" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover; width: 100%;">
-                        <h4>Training & Education</h4>
-                        <p>Comprehensive training programs to ensure your team maximizes the value of your Sensormatic solutions.</p>
-                        <ul class="list-unstyled text-start">
-                            <li><i class="fas fa-check text-success me-2"></i>User Training Programs</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Administrator Training</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Best Practices Workshops</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Ongoing Education</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="service-card text-center">
-                        <img src="/images/c.jpg" alt="Support & Maintenance" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover; width: 100%;">
-                        <h4>Support & Maintenance</h4>
-                        <p>24/7 technical support and proactive maintenance to keep your systems running at peak performance.</p>
-                        <ul class="list-unstyled text-start">
-                            <li><i class="fas fa-check text-success me-2"></i>24/7 Technical Support</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Preventive Maintenance</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Remote Monitoring</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Performance Optimization</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -128,7 +97,7 @@
     </section>
 
     <!-- Service Categories -->
-    <section class="py-5 bg-light">
+    {{-- <section class="py-5 bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
@@ -216,7 +185,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Support Options -->
     <section class="py-5">
@@ -277,10 +246,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2>Ready to Get Started?</h2>
-                    <p class="lead">Contact our services team to discuss your specific needs and get a customized service plan</p>
-                    <a href="{{ route('contact') }}" class="btn btn-light btn-lg me-3">Contact Services Team</a>
-                    <a href="#" class="btn btn-outline-light btn-lg">Download Service Catalog</a>
+                    <h2>Ready to Secure Your Premises?</h2>
+                    <p class="lead">Consult with our security specialists to design a customized access control solution tailored to your facility's unique requirements.</p>
+                    <a href="{{ route('contact') }}" class="btn btn-light btn-lg me-3">Get a Free Security Audit</a>
+                    {{-- <a href="#" class="btn btn-outline-light btn-lg">Download Service Catalog</a> --}}
                 </div>
             </div>
         </div>

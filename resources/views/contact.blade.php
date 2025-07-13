@@ -7,8 +7,17 @@
     <section class="hero-section">
         <div class="container">
             <h1>Contact Us</h1>
-            <h2>Get in Touch</h2>
-            <p class="lead">Ready to transform your retail operations? Our team is here to help you get started.</p>
+            <h2>Secure Your Facility Today</h2>
+            <p class="lead">Ready to upgrade to AI-powered access control? Our security experts are standing by to design your customized protection solution.</p>
+            
+
+            <div class="">
+                Why Choose EAS Security Gates?<br>
+                ✔ 24/7 System Monitoring<br>
+                ✔ Military-Grade Encryption<br>
+                ✔ Seamless Integration with Existing Infrastructure<br>
+            </div>
+       
         </div>
     </section>
 
@@ -32,7 +41,7 @@
                             <i class="fas fa-envelope fa-3x text-primary"></i>
                         </div>
                         <h5>Email</h5>
-                        <p class="mb-2">info@sensormatic.com</p>
+                        <p class="mb-2">info@aradhyainfotech.com</p>
                         <small class="text-muted">General inquiries</small>
                     </div>
                 </div>
@@ -116,7 +125,7 @@
    
 
     <!-- Additional Contact Options -->
-    <section class="py-5">
+    {{-- <section class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
@@ -159,5 +168,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection 
