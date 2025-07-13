@@ -44,3 +44,7 @@ Route::get('/blog', function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::resource('services', App\Http\Controllers\Admin\ServiceController::class);
+});
