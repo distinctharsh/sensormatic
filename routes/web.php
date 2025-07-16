@@ -43,11 +43,11 @@ Route::get('/blog', function () {
     return view('blog');
 })->name('blog');
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
+// Route::group(['prefix' => 'admin'], function () {
+//     Voyager::routes();
+// });
 
-Route::middleware(['auth'])->prefix('admin')->group(function () {
+Route::prefix('admin')->group(function () {
     Route::resource('services', App\Http\Controllers\Admin\ServiceController::class);
     Route::resource('solutions', App\Http\Controllers\Admin\SolutionController::class, [
         'as' => 'solutions.admin'
@@ -55,3 +55,4 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('contact-info/edit', [App\Http\Controllers\Admin\ContactInfoController::class, 'edit'])->name('admin.contact-info.edit');
     Route::put('contact-info/update', [App\Http\Controllers\Admin\ContactInfoController::class, 'update'])->name('admin.contact-info.update');
 });
+
