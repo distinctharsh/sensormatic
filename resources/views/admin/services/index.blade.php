@@ -14,6 +14,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
+                <th>Image</th>
                 <th>Title</th>
                 <th>Slug</th>
                 <th>Active</th>
@@ -24,6 +25,13 @@
         <tbody>
             @foreach($services as $service)
                 <tr>
+                    <td>
+                        @if($service->image)
+                            <img src="{{ asset('storage/' . $service->image) }}" alt="Service Image" style="max-width: 80px;">
+                        @else
+                            <span class="text-muted">No image</span>
+                        @endif
+                    </td>
                     <td>{{ $service->title }}</td>
                     <td>{{ $service->slug }}</td>
                     <td>{{ $service->active ? 'Yes' : 'No' }}</td>

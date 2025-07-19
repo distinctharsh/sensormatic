@@ -27,7 +27,7 @@ class ServiceController extends Controller
             'slug' => 'required|string|max:255|unique:services,slug',
             'description' => 'nullable|string',
             'content' => 'nullable|string',
-            'image' => 'nullable|image',
+            'image' => 'nullable|image|max:2048', // 2MB
             'order' => 'nullable|integer',
             'active' => 'nullable|boolean',
         ]);
@@ -51,7 +51,7 @@ class ServiceController extends Controller
             'slug' => 'required|string|max:255|unique:services,slug,' . $service->id,
             'description' => 'nullable|string',
             'content' => 'nullable|string',
-            'image' => 'nullable|image',
+            'image' => 'nullable|image|max:2048', // 2MB
             'order' => 'nullable|integer',
             'active' => 'nullable|boolean',
         ]);

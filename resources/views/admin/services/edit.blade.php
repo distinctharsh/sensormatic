@@ -30,6 +30,8 @@
                 <div class="mb-2">
                     <img src="{{ asset('storage/' . $service->image) }}" alt="Current Image" style="max-width: 200px;">
                 </div>
+            @else
+                <div class="mb-2 text-muted">No image uploaded.</div>
             @endif
             <input type="file" name="image" id="image" class="form-control">
         </div>

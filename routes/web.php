@@ -47,7 +47,12 @@ Route::get('/blog', function () {
 //     Voyager::routes();
 // });
 
-Route::prefix('admin')->group(function () {
+Route::get('/admin/login', [App\Http\Controllers\Admin\AuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [App\Http\Controllers\Admin\AuthController::class, 'login'])->name('admin.login.submit');
+Route::post('/admin/logout', [App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('admin.logout');
+
+Route::middleware(['admin.auth'])->prefix('admin')->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
     Route::resource('services', App\Http\Controllers\Admin\ServiceController::class);
     Route::resource('solutions', App\Http\Controllers\Admin\SolutionController::class, [
         'as' => 'solutions.admin'
