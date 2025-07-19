@@ -24,6 +24,9 @@
             line-height: 1.6;
             /* background: linear-gradient(135deg, #f6f8fa 0%, #eaf1fb 100%); */
         }
+        body:not(.admin) {
+            color: #222 !important;
+        }
         /* Top Utility Bar */
         .utility-bar {
             background: var(--primary-color);
@@ -94,11 +97,12 @@
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); */
             color: white;
             padding: 80px 0;
             position: relative;
             overflow: hidden;
+            background: #0e4c8a;
         }
 
         .hero-section::before {
@@ -455,9 +459,30 @@
                 border-radius: 0;
             }
         }
+        /* Multi-level dropdown: submenus open to the left */
+        .dropdown-menu .dropdown-menu {
+            left: auto;
+            right: 100%;
+            top: 0;
+            margin-top: 0;
+            margin-left: 0;
+            margin-right: 0.1rem;
+            border-radius: 0.5rem;
+            min-width: 180px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        /* By default, submenu opens right. If .dropdown-menu-left, open left */
+        .dropdown-menu .dropdown-menu {
+            left: 100%;
+            right: auto;
+        }
+        .dropdown-menu .dropdown-menu.dropdown-menu-left {
+            left: auto !important;
+            right: 100% !important;
+        }
     </style>
 </head>
-<body>
+<body @if(request()->is('admin*')) class="admin" @endif>
 @if (request()->is('admin*'))
     <div class="d-flex" style="min-height: 100vh;">
         <!-- Sidebar -->
@@ -646,5 +671,18 @@
 @endif
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.dropdown-menu .dropdown-menu').forEach(function(submenu) {
+        submenu.parentElement.addEventListener('mouseenter', function() {
+            submenu.classList.remove('dropdown-menu-left');
+            var rect = submenu.getBoundingClientRect();
+            if (rect.right > window.innerWidth) {
+                submenu.classList.add('dropdown-menu-left');
+            }
+        });
+    });
+});
+</script>
 </body>
 </html> 
